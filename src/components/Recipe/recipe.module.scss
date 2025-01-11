@@ -1,27 +1,36 @@
 .recipe {
+  width: 300px;
+  border-radius: 7px;
 
-		// .recipe__img-wrapper
+  &__content {
+    padding: 10px;
+  }
+  // .recipe__img-wrapper
 
-		&__img-wrapper {
-		}
+  &__img-wrapper {
+    width: 100%;
+    height: 100px;
+  }
 
-		// .recipe__img
+  // .recipe__img
 
-		&__img {
-		}
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
 
-		// .recipe__title
+  // .recipe__title
 
-		&__title {
-		}
+  &__title {
+  }
 
-		// .recipe__rating
+  // .recipe__rating
 
-		&__rating {
-		}
+  &__rating {
+  }
 
-		// .recipe__tags
+  // .recipe__tags
 
-		&__tags {
-		}
+  &__tags {
+  }
 }

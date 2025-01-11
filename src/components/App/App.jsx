@@ -1,9 +1,26 @@
 import React from "react";
 import styles from "./app.module.scss";
 import cn from "classnames";
+// import ListRecipes from "../ListRecipes/ListRecipes";
+import { useState, useEffect } from "react";
 
 const App = () => {
-  return <div>my super App!!!</div>;
+  const [recipes, setRecipes] = useState(null);
+
+  useEffect(() => {
+    fetch("https://dummyjson.com/recipes")
+      .then((responce) => {
+        return responce.json();
+      })
+      .then((data) => {
+        // console.log("data ->", data);
+        setRecipes(data)
+      });
+  }, []);
+
+  // return <ListRecipes/>;
+
+  return <div className="app">app123</div>;
 };
 
 export default App;

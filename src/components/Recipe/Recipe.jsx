@@ -2,15 +2,17 @@ import React from 'react';
 import cn from 'classnames';
 import styles from "./recipe.module.scss"
 
-const Recipe = () => {
+const Recipe = ({id, title, img, rating, tags}) => {
   return (
     <div className={cn(styles["recipe"])}>
       <div className={cn(styles["recipe__img-wrapper"])}>
         <img className={cn(styles["recipe__img"])} src="" alt="" />
       </div>
-      <h2 className={cn(styles["recipe__title"])}>Lorem, ipsum dolor.</h2>
-      <div className={cn(styles["recipe__rating"])}>rating: 4.6</div>
-      <div className={cn(styles["recipe__tags"])}></div>
+      <div className={cn(styles["recipe__content"])}>
+        <h2 className={cn(styles["recipe__title"])}>Lorem, ipsum dolor.</h2>
+        <div className={cn(styles["recipe__rating"])}>rating: 4.6</div>
+        <div className={cn(styles["recipe__tags"])}></div>
+      </div>
     </div>
   );
 }
