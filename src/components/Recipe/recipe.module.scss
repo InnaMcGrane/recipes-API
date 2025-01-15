@@ -35,5 +35,8 @@
   // .recipe__tags
 
   &__tags {
+    display: flex;
+    gap: 10px;
   }
+
 }

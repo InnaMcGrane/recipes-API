@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from "./recipe.module.scss"
+import Tag from '../Tag/Tag';
 
 const Recipe = ({id, title, img, rating, tags}) => {
   return (
@@ -11,7 +12,13 @@ const Recipe = ({id, title, img, rating, tags}) => {
       <div className={cn(styles["recipe__content"])}>
         <h2 className={cn(styles["recipe__title"])}>{title}</h2>
         <div className={cn(styles["recipe__rating"])}>rating: {rating}</div>
-        <div className={cn(styles["recipe__tags"])}></div>
+        <div className={cn(styles["recipe__tags"])}>
+          {
+          tags.map((text) => {
+            return <Tag text={text}/>
+          })
+        }
+        </div>
       </div>
     </div>
   );
