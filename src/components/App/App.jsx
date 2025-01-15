@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./app.module.scss";
 import cn from "classnames";
-// import ListRecipes from "../ListRecipes/ListRecipes";
+import ListRecipes from "../ListRecipes/ListRecipes";
 import { useState, useEffect } from "react";
 
 const App = () => {
@@ -14,13 +14,12 @@ const App = () => {
       })
       .then((data) => {
         // console.log("data ->", data);
-        setRecipes(data)
+        setRecipes(data);
       });
   }, []);
 
-  // return <ListRecipes/>;
-
-  return <div className="app">app123</div>;
+  return <div className="app">{recipes && <ListRecipes dataRecipes={recipes}/>}</div>;
 };
 
 export default App;
+// recipes && <ListRecipes dataRecipes={recipes}/>

@@ -6,11 +6,11 @@ const Recipe = ({id, title, img, rating, tags}) => {
   return (
     <div className={cn(styles["recipe"])}>
       <div className={cn(styles["recipe__img-wrapper"])}>
-        <img className={cn(styles["recipe__img"])} src="" alt="" />
+        <img className={cn(styles["recipe__img"])} src={img} alt={title} />
       </div>
       <div className={cn(styles["recipe__content"])}>
-        <h2 className={cn(styles["recipe__title"])}>Lorem, ipsum dolor.</h2>
-        <div className={cn(styles["recipe__rating"])}>rating: 4.6</div>
+        <h2 className={cn(styles["recipe__title"])}>{title}</h2>
+        <div className={cn(styles["recipe__rating"])}>rating: {rating}</div>
         <div className={cn(styles["recipe__tags"])}></div>
       </div>
     </div>
