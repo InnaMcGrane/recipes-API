@@ -18,7 +18,11 @@ const App = () => {
       });
   }, []);
 
-  return <div className="app">{recipes && <ListRecipes dataRecipes={recipes}/>}</div>;
+  return (
+    <div className="app">
+      <div className="container">{recipes && <ListRecipes dataRecipes={recipes} />}</div>
+    </div>
+  );
 };
 
 export default App;
