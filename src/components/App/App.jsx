@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   const [recipes, setRecipes] = useState(null);
+  const [isRecipesLoaded, setIsRecipesLoaded] = useState(false)
 
   useEffect(() => {
     fetch("https://dummyjson.com/recipes")
@@ -15,12 +16,13 @@ const App = () => {
       .then((data) => {
         // console.log("data ->", data);
         setRecipes(data);
+        setIsRecipesLoaded(true)
       });
   }, []);
 
   return (
     <div className="app">
-      <div className="container">{recipes && <ListRecipes dataRecipes={recipes} />}</div>
+      <div className="container">{recipes && <ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={recipes} />}</div>
     </div>
   );
 };
