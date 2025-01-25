@@ -1,0 +1,14 @@
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+
+  &__text {
+    color: black;
+    margin: 7px;
+  }
+
+  &__text-mark {
+    color: #44dba4;
+    margin-right: 7px;
+  }
+}

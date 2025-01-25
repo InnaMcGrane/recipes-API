@@ -3,6 +3,7 @@ import styles from "./app.module.scss";
 import cn from "classnames";
 import ListRecipes from "../ListRecipes/ListRecipes";
 import { useState, useEffect } from "react";
+import Header from "../Header/Header";
 
 const App = () => {
   const [recipes, setRecipes] = useState(null);
@@ -22,6 +23,10 @@ const App = () => {
 
   return (
     <div className="app">
+      <div className="container">
+        <Header />
+      </div>
+
       <div className="container">{<ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={recipes} />}</div>
     </div>
   );

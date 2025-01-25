@@ -4,7 +4,7 @@ import Logo from "../Logo/Logo";
 
 const Header = () => {
     return (
-      <header className="header">
+      <header className={cn(styles["header"])}>
         <Logo/>
       </header>
     );
