@@ -5,15 +5,17 @@ import Recipe from "../Recipe/Recipe";
 import RecipeLoader from "../RecipeLoader/RecipeLoader";
 
 const ListRecipes = ({ dataRecipes, isRecipesLoaded }) => {
-  const { recipes } = dataRecipes;
-  console.log(recipes);
+  /* 
+  isRecipesLoaded - показывает надо ли рисовать реальные рецепты или лоадеры
+  */
+
   return (
     <div className={cn(styles["list-recipes"])}>
       {isRecipesLoaded === true
-        ? recipes.map((objRecipe) => {
+        ? dataRecipes.recipes.map((objRecipe) => {
             return <Recipe id={objRecipe.id} title={objRecipe.name} img={objRecipe.image} rating={objRecipe.rating} tags={objRecipe.tags} key={objRecipe.id} />;
           })
-        : new Array(8).fill(undefined).map((el) => <RecipeLoader />)}
+        : new Array(8).fill(undefined).map((el, i) => <RecipeLoader key={i}/>)}
     </div>
   );
 };

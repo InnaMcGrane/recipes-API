@@ -14,8 +14,8 @@ const Recipe = ({id, title, img, rating, tags}) => {
         <div className={cn(styles["recipe__rating"])}>rating: {rating}</div>
         <div className={cn(styles["recipe__tags"])}>
           {
-          tags.map((text) => {
-            return <Tag text={text}/>
+          tags.map((text, i) => {
+            return <Tag text={text} key={i}/>
           })
         }
         </div>
