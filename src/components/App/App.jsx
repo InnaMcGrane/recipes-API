@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 const App = () => {
   const [recipes, setRecipes] = useState(null);
   const [isRecipesLoaded, setIsRecipesLoaded] = useState(false);
+  const [searchText, setSearchText] = useState("")
 
   useEffect(() => {
     fetch("https://dummyjson.com/recipes")
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="container">
-        <Header />
+        <Header setSearchText={setSearchText}/>
       </div>
 
       <div className="container">{<ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={recipes} />}</div>

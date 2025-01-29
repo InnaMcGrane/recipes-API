@@ -3,11 +3,11 @@ import styles from "./header.module.scss";
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 
-const Header = () => {
+const Header = ({setSearchText}) => {
     return (
       <header className={cn(styles["header"])}>
         <Logo/>
-        <Search/>
+        <Search setSearchText={setSearchText}/>
       </header>
     );
 }
