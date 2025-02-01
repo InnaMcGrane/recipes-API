@@ -22,13 +22,22 @@ const App = () => {
       });
   }, []);
 
+  const getRecipesByTitle = (title) => {
+    const result =  recipes.recipes.filter((element ) => {
+      if (element.name.toLowerCase().includes(title)) {
+        return true
+      }
+    })
+    return result;
+  }
+
   return (
     <div className="app">
       <div className="container">
         <Header setSearchText={setSearchText}/>
       </div>
 
-      <div className="container">{<ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={recipes} />}</div>
+      <div className="container">{<ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={isRecipesLoaded ? getRecipesByTitle(searchText) : []} />}</div>
     </div>
   );
 };

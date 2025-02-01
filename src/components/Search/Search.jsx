@@ -19,3 +19,15 @@ const Search = ({setSearchText}) => {
 };
 
 export default Search;
+
+/* 
+
+порядок фильтрации:
+
+1. вбиваем текст в инпут
+2. срабатыывает onInput
+3. вызывется setSearchText(которая находится в App) -> благодаряя этой функции, Search связывается с App
+4. setSearchText меняет состояние в App ''
+5. перерисовка ListRecipes -> первая загрузка -> [](отрисовка пустышек) -> рецепты загружены -> предвари ельно фильтруем getRecipesByTitle
+
+*/
