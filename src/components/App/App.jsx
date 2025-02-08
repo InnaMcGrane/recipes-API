@@ -4,6 +4,7 @@ import cn from "classnames";
 import ListRecipes from "../ListRecipes/ListRecipes";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
+import Tabs from "../Tabs/Tabs";
 
 const App = () => {
   const [recipes, setRecipes] = useState(null);
@@ -35,6 +36,11 @@ const App = () => {
     <div className="app">
       <div className="container">
         <Header setSearchText={setSearchText}/>
+      </div>
+
+      <div className="container">
+        <Tabs/>
+        
       </div>
 
       <div className="container">{<ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={isRecipesLoaded ? getRecipesByTitle(searchText) : []} />}</div>
