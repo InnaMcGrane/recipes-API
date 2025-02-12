@@ -4,7 +4,7 @@ import styles from "./listRecipes.module.scss";
 import Recipe from "../Recipe/Recipe";
 import RecipeLoader from "../RecipeLoader/RecipeLoader";
 
-const ListRecipes = ({ dataRecipes, isRecipesLoaded}) => {
+const ListRecipes = ({ dataRecipes, isRecipesLoaded }) => {
   /* 
   isRecipesLoaded - показывает надо ли рисовать реальные рецепты или лоадеры
   */
@@ -13,9 +13,9 @@ const ListRecipes = ({ dataRecipes, isRecipesLoaded}) => {
     <div className={cn(styles["list-recipes"])}>
       {isRecipesLoaded === true
         ? dataRecipes.map((objRecipe) => {
-            return <Recipe id={objRecipe.id} title={objRecipe.name} img={objRecipe.image} rating={objRecipe.rating} tags={objRecipe.tags} key={objRecipe.id} />;
+            return <Recipe id={objRecipe.id} title={objRecipe.name} img={objRecipe.image} rating={objRecipe.rating} tags={objRecipe.tags} key={objRecipe.id} instructions={objRecipe.instructions}/>;
           })
-        : new Array(8).fill(undefined).map((el, i) => <RecipeLoader key={i}/>)}
+        : new Array(8).fill(undefined).map((el, i) => <RecipeLoader key={i} />)}
     </div>
   );
 };

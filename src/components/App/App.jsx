@@ -4,12 +4,11 @@ import cn from "classnames";
 import ListRecipes from "../ListRecipes/ListRecipes";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
-import Tabs from "../Tabs/Tabs";
 
 const App = () => {
   const [recipes, setRecipes] = useState(null);
   const [isRecipesLoaded, setIsRecipesLoaded] = useState(false);
-  const [searchText, setSearchText] = useState("")
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetch("https://dummyjson.com/recipes")
@@ -17,31 +16,28 @@ const App = () => {
         return responce.json();
       })
       .then((data) => {
-        // console.log("data ->", data);
+        console.log("data ->", data);
         setRecipes(data);
         setIsRecipesLoaded(true);
       });
   }, []);
 
   const getRecipesByTitle = (title) => {
-    const result =  recipes.recipes.filter((element ) => {
+    const result = recipes.recipes.filter((element) => {
       if (element.name.toLowerCase().includes(title)) {
-        return true
+        return true;
       }
-    })
+    });
     return result;
-  }
+  };
 
   return (
     <div className="app">
       <div className="container">
-        <Header setSearchText={setSearchText}/>
+        <Header setSearchText={setSearchText} />
       </div>
 
-      <div className="container">
-        <Tabs/>
-        
-      </div>
+    
 
       <div className="container">{<ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={isRecipesLoaded ? getRecipesByTitle(searchText) : []} />}</div>
     </div>
