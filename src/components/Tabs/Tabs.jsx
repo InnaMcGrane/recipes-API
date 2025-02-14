@@ -5,6 +5,7 @@ import { useState } from "react";
 import TabContent from "../TabContent/TabContent";
 import ListGroup from "../ListGroup/ListGroup";
 import ListGroupItem from "../ListGroupItem/ListgroupItem";
+import Collapse from "../Collapse/Collapse";
 
 const Tabs = ({ instructions }) => {
   const [activeSlideNumber, setActiveSlideNumber] = useState(1);
@@ -18,14 +19,13 @@ const Tabs = ({ instructions }) => {
       </div>
       <div className="tabs__content">
         <TabContent active={activeSlideNumber === 1}>
-          <ListGroup>
-            {instructions.map((text) => 
-            <ListGroupItem>
-                {text}
-              </ListGroupItem>)}
-          </ListGroup>
-
-          
+          <Collapse isOpen={true}>
+            <ListGroup>
+              {instructions.map((text) => (
+                <ListGroupItem>{text}</ListGroupItem>
+              ))}
+            </ListGroup>
+          </Collapse>
         </TabContent>
         <TabContent active={activeSlideNumber === 2}>content2</TabContent>
         <TabContent active={activeSlideNumber === 3}>content3</TabContent>
