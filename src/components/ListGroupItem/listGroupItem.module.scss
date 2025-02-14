@@ -1,0 +1,14 @@
+.list-group-item {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #44dba4;
+    position: absolute;
+    left: -25px;
+    top: 2px;
+  }
+}

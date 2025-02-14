@@ -3,6 +3,8 @@ import styles from "./tabs.module.scss";
 import Tab from "../Tab/Tab";
 import { useState } from "react";
 import TabContent from "../TabContent/TabContent";
+import ListGroup from "../ListGroup/ListGroup";
+import ListGroupItem from "../ListGroupItem/ListgroupItem";
 
 const Tabs = ({ instructions }) => {
   const [activeSlideNumber, setActiveSlideNumber] = useState(1);
@@ -16,18 +18,14 @@ const Tabs = ({ instructions }) => {
       </div>
       <div className="tabs__content">
         <TabContent active={activeSlideNumber === 1}>
-          {/* <List>
-            <ListLi>step 1</ListLi>
-            <ListLi>step 1</ListLi>
-            <ListLi>step 1</ListLi>
-            <ListLi>step 1</ListLi>
-            <ListLi>step 1</ListLi>
-          </List> */}
-          <ul>
-            {instructions.map((text) => {
-              return <li>{text}</li>;
-            })}
-          </ul>
+          <ListGroup>
+            {instructions.map((text) => 
+            <ListGroupItem>
+                {text}
+              </ListGroupItem>)}
+          </ListGroup>
+
+          
         </TabContent>
         <TabContent active={activeSlideNumber === 2}>content2</TabContent>
         <TabContent active={activeSlideNumber === 3}>content3</TabContent>
