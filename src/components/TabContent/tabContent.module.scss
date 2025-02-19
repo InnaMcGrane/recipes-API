@@ -1,14 +1,12 @@
 .tab-content {
-    opacity: 0;
-		visibility: hidden;
-    height: 0px;
-		transition: opacity .5s;
+  opacity: 0;
+  visibility: hidden;
+  height: 0px;
+  transition: opacity 0.5s;
 
-  &--active{
+  &--active {
     opacity: 1;
     visibility: visible;
-    height: auto;  
-
+    height: auto;
   }
-  
-}  
+}
