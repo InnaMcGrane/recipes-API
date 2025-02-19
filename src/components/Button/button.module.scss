@@ -1,0 +1,14 @@
+.btn {
+    border-radius: 5px;
+    padding: 4px 10px;
+		cursor: pointer;
+	
+    &_primary {
+        background-color: #11a06c;
+    }
+
+	&:disabled {
+        background-color: #969696;
+		opacity: .5;
+	} 	
+}

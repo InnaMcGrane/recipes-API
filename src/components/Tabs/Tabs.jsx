@@ -20,6 +20,7 @@ const Tabs = ({ instructions }) => {
       <div className="tabs__content">
         <TabContent active={activeSlideNumber === 1}>
           <Collapse isOpen={true}>
+            {/* children */}
             <ListGroup>
               {instructions.map((text) => (
                 <ListGroupItem>{text}</ListGroupItem>
