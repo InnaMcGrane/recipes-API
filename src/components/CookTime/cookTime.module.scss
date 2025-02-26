@@ -1,0 +1,21 @@
+.cook-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__icon {
+    color: rgb(56, 192, 202); //#11a06c
+  }
+}

@@ -7,9 +7,9 @@ import ListGroup from "../ListGroup/ListGroup";
 import ListGroupItem from "../ListGroupItem/ListgroupItem";
 import Collapse from "../Collapse/Collapse";
 import Button from "../Button/Button";
+import CookTime from "../CookTime/CookTime";
 
 const Tabs = ({ instructions, ingredients }) => {
-  console.log(ingredients);
   const [activeSlideNumber, setActiveSlideNumber] = useState(1);
   const [firstCollapseIsOpen, setFirstCollapseIsOpen] = useState(false)
   const [lastCollapseIsOpen, setLastCollapseIsOpen] = useState(false)
@@ -50,7 +50,9 @@ const Tabs = ({ instructions, ingredients }) => {
             </Button>
             </div>
         </TabContent>
-        <TabContent active={activeSlideNumber === 3}>content3</TabContent>
+        <TabContent active={activeSlideNumber === 3}>
+          <CookTime prepTimeMinutes={20} cookTimeMinutes={15}/>
+        </TabContent>
       </div>
     </div>
   );
