@@ -4,7 +4,7 @@ import styles from "./recipe.module.scss"
 import Tag from '../Tag/Tag';
 import Tabs from '../Tabs/Tabs';
 
-const Recipe = ({id, title, img, rating, tags, instructions}) => {
+const Recipe = ({id, title, img, rating, tags, instructions, ingredients}) => {
   
   return (
     <div className={cn(styles["recipe"])}>
@@ -14,7 +14,7 @@ const Recipe = ({id, title, img, rating, tags, instructions}) => {
       <div className={cn(styles["recipe__content"])}>
         <h2 className={cn(styles["recipe__title"])}>{title}</h2>
         <div className={cn(styles["recipe__rating"])}>rating: {rating}</div>
-        <Tabs instructions={instructions} />
+        <Tabs instructions={instructions} ingredients={ingredients} />
         <div className={cn(styles["recipe__tags"])}>
           {tags.map((text, i) => {
             return <Tag text={text} key={i} />;

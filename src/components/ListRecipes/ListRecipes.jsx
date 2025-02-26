@@ -13,7 +13,18 @@ const ListRecipes = ({ dataRecipes, isRecipesLoaded }) => {
     <div className={cn(styles["list-recipes"])}>
       {isRecipesLoaded === true
         ? dataRecipes.map((objRecipe) => {
-            return <Recipe id={objRecipe.id} title={objRecipe.name} img={objRecipe.image} rating={objRecipe.rating} tags={objRecipe.tags} key={objRecipe.id} instructions={objRecipe.instructions}/>;
+            return (
+              <Recipe
+                id={objRecipe.id}
+                title={objRecipe.name}
+                img={objRecipe.image}
+                rating={objRecipe.rating}
+                tags={objRecipe.tags}
+                key={objRecipe.id}
+                instructions={objRecipe.instructions}
+                ingredients={objRecipe.ingredients}
+              />
+            );
           })
         : new Array(8).fill(undefined).map((el, i) => <RecipeLoader key={i} />)}
     </div>

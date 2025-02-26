@@ -8,9 +8,11 @@ import ListGroupItem from "../ListGroupItem/ListgroupItem";
 import Collapse from "../Collapse/Collapse";
 import Button from "../Button/Button";
 
-const Tabs = ({ instructions }) => {
+const Tabs = ({ instructions, ingredients }) => {
+  console.log(ingredients);
   const [activeSlideNumber, setActiveSlideNumber] = useState(1);
   const [firstCollapseIsOpen, setFirstCollapseIsOpen] = useState(false)
+  const [lastCollapseIsOpen, setLastCollapseIsOpen] = useState(false)
 
   return (
     <div className={cn(styles["tabs"])}>
@@ -23,8 +25,8 @@ const Tabs = ({ instructions }) => {
         <TabContent active={activeSlideNumber === 1}>
           <Collapse isOpen={firstCollapseIsOpen}>
             <ListGroup>
-              {instructions.map((text) => (
-                <ListGroupItem>{text}</ListGroupItem>
+              {instructions.map((text, i) => (
+                <ListGroupItem key={i}>{text}</ListGroupItem>
               ))}
             </ListGroup>
           </Collapse>
@@ -34,7 +36,20 @@ const Tabs = ({ instructions }) => {
             </Button>
           </div>
         </TabContent>
-        <TabContent active={activeSlideNumber === 2}>content2</TabContent>
+        <TabContent active={activeSlideNumber === 2}>
+          <Collapse isOpen={lastCollapseIsOpen}>
+            <ListGroup>
+              {ingredients.map((text, i) => {
+                return <ListGroupItem key={i}>{text}</ListGroupItem>;
+              })}
+            </ListGroup>
+          </Collapse>
+            <div className={cn(styles["tabs__btn-collapse-control"])}>
+            <Button type="primary" handler={() => setLastCollapseIsOpen(!lastCollapseIsOpen)}>
+              {lastCollapseIsOpen === true ? "Show less" : "Show more"}
+            </Button>
+            </div>
+        </TabContent>
         <TabContent active={activeSlideNumber === 3}>content3</TabContent>
       </div>
     </div>
