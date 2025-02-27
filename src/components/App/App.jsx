@@ -4,6 +4,7 @@ import cn from "classnames";
 import ListRecipes from "../ListRecipes/ListRecipes";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
+import ShortText from "../ShortText/ShortText";
 
 const App = () => {
   const [recipes, setRecipes] = useState(null);
@@ -36,9 +37,6 @@ const App = () => {
       <div className="container">
         <Header setSearchText={setSearchText} />
       </div>
-
-    
-
       <div className="container">{<ListRecipes isRecipesLoaded={isRecipesLoaded} dataRecipes={isRecipesLoaded ? getRecipesByTitle(searchText) : []} />}</div>
     </div>
   );
