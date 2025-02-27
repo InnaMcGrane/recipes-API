@@ -23,6 +23,8 @@ const ListRecipes = ({ dataRecipes, isRecipesLoaded }) => {
                 key={objRecipe.id}
                 instructions={objRecipe.instructions}
                 ingredients={objRecipe.ingredients}
+                prepTimeMinutes={objRecipe.prepTimeMinutes}
+                cookTimeMinutes={objRecipe.cookTimeMinutes}
               />
             );
           })

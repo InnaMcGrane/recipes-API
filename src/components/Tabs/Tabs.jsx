@@ -9,7 +9,7 @@ import Collapse from "../Collapse/Collapse";
 import Button from "../Button/Button";
 import CookTime from "../CookTime/CookTime";
 
-const Tabs = ({ instructions, ingredients }) => {
+const Tabs = ({ instructions, ingredients, prepTimeMinutes, cookTimeMinutes}) => {
   const [activeSlideNumber, setActiveSlideNumber] = useState(1);
   const [firstCollapseIsOpen, setFirstCollapseIsOpen] = useState(false)
   const [lastCollapseIsOpen, setLastCollapseIsOpen] = useState(false)
@@ -51,7 +51,7 @@ const Tabs = ({ instructions, ingredients }) => {
             </div>
         </TabContent>
         <TabContent active={activeSlideNumber === 3}>
-          <CookTime prepTimeMinutes={20} cookTimeMinutes={15}/>
+          <CookTime prepTimeMinutes={prepTimeMinutes} cookTimeMinutes={cookTimeMinutes}/>
         </TabContent>
       </div>
     </div>
