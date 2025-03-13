@@ -3,6 +3,8 @@ import cn from "classnames";
 import styles from "./listRecipes.module.scss";
 import Recipe from "../Recipe/Recipe";
 import RecipeLoader from "../RecipeLoader/RecipeLoader";
+import { createPortal } from "react-dom";
+import PopUp from "../PopUp/PopUp";
 
 const ListRecipes = ({ dataRecipes, isRecipesLoaded }) => {
   /* 
@@ -29,6 +31,7 @@ const ListRecipes = ({ dataRecipes, isRecipesLoaded }) => {
             );
           })
         : new Array(8).fill(undefined).map((el, i) => <RecipeLoader key={i} />)}
+      {createPortal(<PopUp><img src="https://lipsum.app/random/800x400" /></PopUp>, document.body)}
     </div>
   );
 };

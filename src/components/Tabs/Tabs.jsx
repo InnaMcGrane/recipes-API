@@ -8,11 +8,40 @@ import ListGroupItem from "../ListGroupItem/ListgroupItem";
 import Collapse from "../Collapse/Collapse";
 import Button from "../Button/Button";
 import CookTime from "../CookTime/CookTime";
+import { useContext } from "react";
 
 const Tabs = ({ instructions, ingredients, prepTimeMinutes, cookTimeMinutes}) => {
   const [activeSlideNumber, setActiveSlideNumber] = useState(1);
   const [firstCollapseIsOpen, setFirstCollapseIsOpen] = useState(false)
   const [lastCollapseIsOpen, setLastCollapseIsOpen] = useState(false)
+
+  // const CounterContext = React.createContext(0);
+
+  // <CounterContext.Provider value={{counter: 0}}>
+  //   <A>
+  //     <B>
+  //       <C>
+  //         <D></D>
+  //       </C>
+  //     </B>
+  //   </A>
+  // </CounterContext.Provider>
+
+  // function D() {
+  //   const {counter} = useContext(CounterContext)
+  // }
+
+  /*
+  
+  main counter useState 2
+  CounterContext counter------------------------------------
+    A counter
+      B counter
+        C counter
+          D counter 2 update CounterContext
+  ------------------------------------
+  
+  */
 
   return (
     <div className={cn(styles["tabs"])}>
