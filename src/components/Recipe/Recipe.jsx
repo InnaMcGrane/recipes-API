@@ -4,17 +4,16 @@ import styles from "./recipe.module.scss"
 import Tag from '../Tag/Tag';
 import Tabs from '../Tabs/Tabs';
 
-const Recipe = ({id, title, img, rating, tags, instructions, ingredients, prepTimeMinutes, cookTimeMinutes}) => {
-  
+const Recipe = ({ id, title, img, rating, tags, instructions, ingredients, prepTimeMinutes, cookTimeMinutes, setCurrentDataImgPopup }) => {
   return (
     <div className={cn(styles["recipe"])}>
-      <div className={cn(styles["recipe__img-wrapper"])}>
+      <div className={cn(styles["recipe__img-wrapper"])} onClick={() => setCurrentDataImgPopup({title, img})}>
         <img className={cn(styles["recipe__img"])} src={img} alt={title} />
       </div>
       <div className={cn(styles["recipe__content"])}>
         <h2 className={cn(styles["recipe__title"])}>{title}</h2>
         <div className={cn(styles["recipe__rating"])}>rating: {rating}</div>
-        <Tabs instructions={instructions} ingredients={ingredients} prepTimeMinutes={prepTimeMinutes} cookTimeMinutes={cookTimeMinutes}/>
+        <Tabs instructions={instructions} ingredients={ingredients} prepTimeMinutes={prepTimeMinutes} cookTimeMinutes={cookTimeMinutes} />
         <div className={cn(styles["recipe__tags"])}>
           {tags.map((text, i) => {
             return <Tag text={text} key={i} />;
@@ -23,7 +22,7 @@ const Recipe = ({id, title, img, rating, tags, instructions, ingredients, prepTi
       </div>
     </div>
   );
-}
+};
 
 export default Recipe
 
